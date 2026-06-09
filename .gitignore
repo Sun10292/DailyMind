@@ -1,0 +1,13 @@
+# 配置（包含密码和API Key）
+config.py
+
+# 数据库（自动生成）
+data/
+
+# 临时测试文件
+test_*.py
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
