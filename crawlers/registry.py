@@ -12,8 +12,8 @@ from .geography import GEOGRAPHY_CRAWLERS
 from .psychology import PSYCHOLOGY_CRAWLERS
 from .society import SOCIETY_CRAWLERS
 from .humanities import HUMANITIES_CRAWLERS
-from .social_science import SOCIAL_SCIENCE_CRAWLERS
 from .nature import NATURE_CRAWLERS
+from .biology import BIOLOGY_CRAWLERS
 from .philosophy import PHILOSOPHY_CRAWLERS
 from .tech import TECH_CRAWLERS
 from .economy import ECONOMY_CRAWLERS
@@ -26,8 +26,8 @@ ALL_DOMAINS = [
     ("心理", PSYCHOLOGY_CRAWLERS),
     ("社会", SOCIETY_CRAWLERS),
     ("人文", HUMANITIES_CRAWLERS),
-    ("社科", SOCIAL_SCIENCE_CRAWLERS),
     ("自然", NATURE_CRAWLERS),
+    ("生物", BIOLOGY_CRAWLERS),
     ("哲学", PHILOSOPHY_CRAWLERS),
     ("科技", TECH_CRAWLERS),
     ("经济", ECONOMY_CRAWLERS),

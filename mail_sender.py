@@ -31,11 +31,11 @@ def build_html(articles: List[Article]) -> str:
         "心理": "🧠",
         "社会": "👥",
         "人文": "🎭",
-        "社科": "📚",
         "自然": "🌿",
         "哲学": "💭",
         "科技": "🤖",
         "经济": "💰",
+        "生物": "🧬",
     }
 
     today = date.today().isoformat()
