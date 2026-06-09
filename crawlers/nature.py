@@ -21,7 +21,7 @@ class NewScientistNatureCrawler(BaseCrawler):
               "bird", "fish", "insect", "dinosaur", "fossil",
               "动物", "植物", "物种", "生态", "进化", "基因"]
         filtered = [a for a in articles if any(k in a.title.lower() for k in kw)]
-        return filtered if filtered else articles[:3]
+        return filtered
 
 
 class BBCNatureCrawler(BaseCrawler):
@@ -37,7 +37,7 @@ class BBCNatureCrawler(BaseCrawler):
                            "nature", "species", "extinct", "endangered",
                            "ecolog", "conservation"]
         filtered = [a for a in articles if any(kw in a.title.lower() for kw in nature_keywords)]
-        return filtered if filtered else articles[:3]
+        return filtered
 
 
 NATURE_CRAWLERS = [NewScientistNatureCrawler, BBCNatureCrawler]

@@ -19,7 +19,7 @@ class AeonHumanitiesCrawler(BaseCrawler):
               "ancient", "medieval", "poetry", "fiction", "culture",
               "伦理", "哲学", "历史", "艺术", "文学", "文明"]
         filtered = [a for a in articles if any(k in a.title.lower() for k in kw)]
-        return filtered if filtered else articles[:2]
+        return filtered
 
 
 class GuardianBooksCrawler(BaseCrawler):

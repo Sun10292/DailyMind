@@ -21,7 +21,7 @@ class AeonPhilosophyCrawler(BaseCrawler):
               "伦理", "道德", "存在", "意义", "真理", "自由",
               "意识", "思维", "理性"]
         filtered = [a for a in articles if any(k in a.title.lower() for k in kw)]
-        return filtered if filtered else articles[:2]
+        return filtered
 
 
 class NewScientistPhilCrawler(BaseCrawler):
@@ -36,7 +36,7 @@ class NewScientistPhilCrawler(BaseCrawler):
               "quantum", "reality", "mind", "brain", "perception",
               "identity", "meaning", "exist", "free will"]
         filtered = [a for a in articles if any(k in a.title.lower() for k in kw)]
-        return filtered if filtered else articles[:2]
+        return filtered
 
 
 PHILOSOPHY_CRAWLERS = [AeonPhilosophyCrawler, NewScientistPhilCrawler]

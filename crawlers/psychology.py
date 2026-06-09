@@ -29,7 +29,7 @@ class IfanrPsychCrawler(BaseCrawler):
                           "睡眠", "压力", "焦虑", "抑郁", "幸福", "习惯",
                           "mind", "brain", "mental", "emotion", "psych"]
         filtered = [a for a in articles if any(kw in a.title.lower() for kw in psych_keywords)]
-        return filtered if filtered else articles[:3]
+        return filtered
 
 
 PSYCHOLOGY_CRAWLERS = [ScienceDailyMindCrawler, IfanrPsychCrawler]

@@ -19,7 +19,7 @@ class SolidotSocietyCrawler(BaseCrawler):
                            "中国", "美国", "欧洲", "世界", "政策", "伦理",
                            "安全", "保护", "人权", "平等", "公正"]
         filtered = [a for a in articles if any(kw in a.title for kw in social_keywords)]
-        return filtered if filtered else articles[:5]
+        return filtered
 
 
 class BBCSocialCrawler(BaseCrawler):
@@ -34,7 +34,7 @@ class BBCSocialCrawler(BaseCrawler):
                            "privacy", "rights", "inequality", "justice", "poverty",
                            "housing", "crime", "community", "welfare"]
         filtered = [a for a in articles if any(kw in a.title.lower() for kw in social_keywords)]
-        return filtered if filtered else articles[:3]
+        return filtered
 
 
 SOCIETY_CRAWLERS = [SolidotSocietyCrawler, BBCSocialCrawler]

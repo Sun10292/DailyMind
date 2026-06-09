@@ -20,7 +20,7 @@ class Kr36EconomyCrawler(BaseCrawler):
                          "创业", "商业", "消费", "品牌", "电商", "出海",
                          "资本", "估值", "交易", "基金", "股票"]
         filtered = [a for a in articles if any(kw in a.title for kw in econ_keywords)]
-        return filtered if filtered else articles[:5]
+        return filtered
 
 
 class BBCBusinessCrawler(BaseCrawler):

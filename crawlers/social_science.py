@@ -19,7 +19,7 @@ class Kr36SocialCrawler(BaseCrawler):
                            "人口", "城市", "经济", "消费", "市场", "行业",
                            "深度", "分析", "观察", "现象"]
         filtered = [a for a in articles if any(kw in a.title for kw in social_keywords)]
-        return filtered if filtered else articles[:5]
+        return filtered
 
 
 class NewScientistSocialCrawler(BaseCrawler):
@@ -34,7 +34,7 @@ class NewScientistSocialCrawler(BaseCrawler):
                            "anthropology", "sociology", "psychology",
                            "population", "urban", "city", "human"]
         filtered = [a for a in articles if any(kw in a.title.lower() for kw in social_keywords)]
-        return filtered if filtered else articles[:3]
+        return filtered
 
 
 SOCIAL_SCIENCE_CRAWLERS = [Kr36SocialCrawler, NewScientistSocialCrawler]

@@ -22,7 +22,7 @@ class NewScientistNatureCrawler(BaseCrawler):
               "物种", "意识", "基因", "大脑", "神经", "动物",
               "植物", "量子", "物理", "数学"]
         filtered = [a for a in articles if any(k in a.title.lower() for k in kw)]
-        return filtered if filtered else articles[:3]
+        return filtered
 
 
 class ScienceDailyMindCrawler(BaseCrawler):

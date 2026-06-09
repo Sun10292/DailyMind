@@ -20,7 +20,7 @@ class ScienceDailyGeoCrawler(BaseCrawler):
                         "glacier", "ice", "weather", "map", "migration", "hominin",
                         "human evolution"]
         filtered = [a for a in articles if any(kw in a.title.lower() for kw in geo_keywords)]
-        return filtered if filtered else articles[:5]
+        return filtered
 
 
 class SolidotGeoCrawler(BaseCrawler):
@@ -35,7 +35,7 @@ class SolidotGeoCrawler(BaseCrawler):
                         "化石", "考古", "冰川", "天气", "地图", "地理",
                         "生态", "物种", "森林"]
         filtered = [a for a in articles if any(kw in a.title for kw in geo_keywords)]
-        return filtered if filtered else articles[:3]
+        return filtered
 
 
 GEOGRAPHY_CRAWLERS = [ScienceDailyGeoCrawler, SolidotGeoCrawler]

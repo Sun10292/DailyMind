@@ -20,7 +20,7 @@ class SkyNewsCrawler(BaseCrawler):
                           "saturn", "jupiter", "venus", "mercury", "comet", "asteroid",
                           "太空", "天文", "宇宙", "火星", "月球"]
         filtered = [a for a in articles if any(kw in a.title.lower() for kw in astro_keywords)]
-        return filtered if filtered else articles[:3]
+        return filtered
 
 
 class ArTechSpaceCrawler(BaseCrawler):
@@ -34,7 +34,7 @@ class ArTechSpaceCrawler(BaseCrawler):
         space_keywords = ["space", "nasa", "astronom", "mars", "moon", "satellit",
                           "telescop", "rocket", "launch", "orbit"]
         filtered = [a for a in articles if any(kw in a.title.lower() for kw in space_keywords)]
-        return filtered if filtered else articles[:2]
+        return filtered
 
 
 ASTRONOMY_CRAWLERS = [SkyNewsCrawler, ArTechSpaceCrawler]
