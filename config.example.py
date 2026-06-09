@@ -33,6 +33,11 @@ AI_CONFIG = {
 
 
 # ==================== 运行配置 ====================
-RANDOM_DOMAINS_COUNT = 4    # 每天选几个领域
-ARTICLES_PER_DOMAIN = 2     # 每领域选几篇
-MAX_DAYS = 3                 # 只取几天内的文章
+# 每天从10个领域中随机选 N 个领域推送（建议5-6个）
+RANDOM_DOMAINS_COUNT = 5
+
+# 每个领域最多选几篇文章（建议1-2篇）
+ARTICLES_PER_DOMAIN = 2
+
+# 只抓取最近 N 天内的文章（新鲜度控制）
+MAX_DAYS = 3

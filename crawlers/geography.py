@@ -1,13 +1,13 @@
 """
 地理领域爬虫
 ===========
-信源（RSS）: ScienceDaily（考古/地理）, New Scientist（环境）, 爱范儿（旅行/地理）
+信源（RSS）: ScienceDaily（考古/地理/英文）, Solidot（中文地理相关）
 """
 
 from .base import BaseCrawler, Article
 
 
-class ScienceDailySocietyCrawler(BaseCrawler):
+class ScienceDailyGeoCrawler(BaseCrawler):
     """ScienceDaily — 社会/考古/地理（英文）"""
     domain = "地理"
     source = "ScienceDaily"
@@ -23,19 +23,19 @@ class ScienceDailySocietyCrawler(BaseCrawler):
         return filtered if filtered else articles[:5]
 
 
-class NewScientistGeoCrawler(BaseCrawler):
-    """New Scientist — 环境/地理（英文）"""
+class SolidotGeoCrawler(BaseCrawler):
+    """Solidot — 科技/社会/地理（中文）"""
     domain = "地理"
-    source = "New Scientist"
-    rss_url = "https://www.newscientist.com/feed/home"
+    source = "Solidot"
+    rss_url = "https://www.solidot.org/index.rss"
 
     def fetch(self) -> list[Article]:
         articles = self.parse_rss()
-        geo_keywords = ["earth", "climate", "environment", "ocean", "volcano",
-                        "earthquake", "fossil", "dinosaur", "archaeolog", "ancient",
-                        "planet", "geolog"]
-        filtered = [a for a in articles if any(kw in a.title.lower() for kw in geo_keywords)]
+        geo_keywords = ["地球", "气候", "环境", "海洋", "火山", "地震",
+                        "化石", "考古", "冰川", "天气", "地图", "地理",
+                        "生态", "物种", "森林"]
+        filtered = [a for a in articles if any(kw in a.title for kw in geo_keywords)]
         return filtered if filtered else articles[:3]
 
 
-GEOGRAPHY_CRAWLERS = [ScienceDailySocietyCrawler, NewScientistGeoCrawler]
+GEOGRAPHY_CRAWLERS = [ScienceDailyGeoCrawler, SolidotGeoCrawler]

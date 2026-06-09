@@ -1,7 +1,7 @@
 """
-人文/社科领域爬虫
-===============
-信源（RSS）: Aeon（英文）, The Guardian Books（英文）, 爱范儿（中文生活/文化）
+人文领域爬虫
+===========
+信源（RSS）: Aeon（人文/文化/历史/英文）, The Guardian Books（书评/英文）
 """
 
 from .base import BaseCrawler, Article
@@ -9,7 +9,7 @@ from .base import BaseCrawler, Article
 
 class AeonHumanitiesCrawler(BaseCrawler):
     """Aeon — 哲学/文化/历史（英文）"""
-    domain = "人文/社科"
+    domain = "人文"
     source = "Aeon"
     rss_url = "https://aeon.co/feed.rss"
 
@@ -24,7 +24,7 @@ class AeonHumanitiesCrawler(BaseCrawler):
 
 class GuardianBooksCrawler(BaseCrawler):
     """The Guardian — 书评/文化（英文）"""
-    domain = "人文/社科"
+    domain = "人文"
     source = "The Guardian"
     rss_url = "https://www.theguardian.com/books/rss"
 
@@ -32,14 +32,4 @@ class GuardianBooksCrawler(BaseCrawler):
         return self.parse_rss()
 
 
-class IfanrCultureCrawler(BaseCrawler):
-    """爱范儿 — 科技/生活/文化（中文）"""
-    domain = "人文/社科"
-    source = "爱范儿"
-    rss_url = "https://www.ifanr.com/feed"
-
-    def fetch(self) -> list[Article]:
-        return self.parse_rss()
-
-
-HUMANITIES_CRAWLERS = [AeonHumanitiesCrawler, GuardianBooksCrawler, IfanrCultureCrawler]
+HUMANITIES_CRAWLERS = [AeonHumanitiesCrawler, GuardianBooksCrawler]

@@ -10,19 +10,27 @@ from .base import BaseCrawler
 from .astronomy import ASTRONOMY_CRAWLERS
 from .geography import GEOGRAPHY_CRAWLERS
 from .psychology import PSYCHOLOGY_CRAWLERS
+from .society import SOCIETY_CRAWLERS
 from .humanities import HUMANITIES_CRAWLERS
-from .nature_phil import NATURE_PHIL_CRAWLERS
+from .social_science import SOCIAL_SCIENCE_CRAWLERS
+from .nature import NATURE_CRAWLERS
+from .philosophy import PHILOSOPHY_CRAWLERS
 from .tech import TECH_CRAWLERS
+from .economy import ECONOMY_CRAWLERS
 
 # 所有领域爬虫列表
 # 每个条目: (领域名称, 该领域下的爬虫类列表)
 ALL_DOMAINS = [
     ("天文", ASTRONOMY_CRAWLERS),
     ("地理", GEOGRAPHY_CRAWLERS),
-    ("心理/社会", PSYCHOLOGY_CRAWLERS),
-    ("人文/社科", HUMANITIES_CRAWLERS),
-    ("自然/哲学", NATURE_PHIL_CRAWLERS),
+    ("心理", PSYCHOLOGY_CRAWLERS),
+    ("社会", SOCIETY_CRAWLERS),
+    ("人文", HUMANITIES_CRAWLERS),
+    ("社科", SOCIAL_SCIENCE_CRAWLERS),
+    ("自然", NATURE_CRAWLERS),
+    ("哲学", PHILOSOPHY_CRAWLERS),
     ("科技", TECH_CRAWLERS),
+    ("经济", ECONOMY_CRAWLERS),
 ]
 
 

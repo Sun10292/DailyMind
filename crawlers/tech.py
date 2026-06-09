@@ -1,13 +1,13 @@
 """
 科技领域爬虫
 ===========
-信源（RSS）: 36氪（中文）, Ars Technica（英文）, 爱范儿（中文科技）
+信源（RSS）: 36氪（中文）, Ars Technica（英文）, 爱范儿（中文）
 """
 
 from .base import BaseCrawler, Article
 
 
-class Kr36RssCrawler(BaseCrawler):
+class Kr36TechCrawler(BaseCrawler):
     """36氪 — 科技/商业资讯（中文）"""
     domain = "科技"
     source = "36氪"
@@ -37,4 +37,4 @@ class IfanrTechCrawler(BaseCrawler):
         return self.parse_rss()
 
 
-TECH_CRAWLERS = [Kr36RssCrawler, ArsTechnicaCrawler, IfanrTechCrawler]
+TECH_CRAWLERS = [Kr36TechCrawler, ArsTechnicaCrawler, IfanrTechCrawler]
