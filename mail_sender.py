@@ -8,7 +8,7 @@ import smtplib
 import ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from datetime import date
+from datetime import date, timedelta
 from typing import List
 from config import SMTP_CONFIG, TO_EMAIL
 from crawlers.base import Article
@@ -128,7 +128,7 @@ def build_html(articles: List[Article]) -> str:
                         border-top:1px solid #eee; border-radius:20px 20px 0 0;">
                 <p style="color:#bbb; font-size:12px; margin:0;">
                     DailyMind · 不追踪 · 不算法 · 只为思考<br>
-                    明日 {date.today().isoformat()} 晚 8 点再见
+                    明日 {(date.today() + timedelta(days=1)).isoformat()} 晚 8 点再见
                 </p>
             </div>
 
